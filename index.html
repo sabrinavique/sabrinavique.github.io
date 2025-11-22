@@ -56,12 +56,45 @@
     /* NOVO LAYOUT PARA A SEÇÃO DE CONTOS */
 
 /* Capa grande e visível */
+/* CAPA COM EFEITO SHINE SWIPE */
 .capa-conto {
   width: 140px;
   height: auto;
   border-radius: 10px;
   object-fit: cover;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
+  /* Necessário para o shine swipe */
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+/* A faixa de luz */
+.capa-conto::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255,255,255,0.25) 50%,
+    transparent 100%
+  );
+
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: transform 0.6s ease, opacity 0.4s ease;
+}
+
+/* O brilho passando */
+.capa-conto:hover::after {
+  opacity: 1;
+  transform: translateX(100%);
 }
 
 /* Botões organizados em coluna */

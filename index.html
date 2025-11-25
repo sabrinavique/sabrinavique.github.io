@@ -264,6 +264,53 @@
 html, body, .card, nav a, header, .btn, .capa-wrapper {
   transition: background-color 0.4s ease, color 0.4s ease, border 0.4s ease;
 }
+/* ======== SOBRE MIM — DESKTOP ======== */
+
+.sobre-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.sobre-img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.sobre-texto p {
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+/* ======== SOBRE MIM — MOBILE ======== */
+@media (max-width: 700px) {
+
+  .sobre-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .sobre-img {
+    width: 80vw;
+    max-width: 360px;
+    height: auto;
+    margin: 0 auto 16px auto;
+  }
+
+  .sobre-texto {
+    width: 100%;
+  }
+
+  .sobre-texto p {
+    text-align: justify !important;
+    padding: 0 10px;
+  }
+}
 
   </style>
 </head>
@@ -318,11 +365,12 @@ html, body, .card, nav a, header, .btn, .capa-wrapper {
   </div>
 </section>
 
-      <section id="sobre" class="card fade" style="display:none">
-        <h3>Sobre a autora</h3>
-        <div style="display:flex;gap:12px;align-items:center">
-          <img src="fotosabrina.png" alt="Foto Sabrina" style="width:150px;height:150px;object-fit:cover;border-radius:10px">
-          <div>
+<section id="sobre" class="card fade" style="display:none">
+  <h3>Sobre a autora</h3>
+
+  <div class="sobre-container">
+    <img class="sobre-img" src="fotosabrina.png" alt="Foto Sabrina">
+    <div class="sobre-texto">
             <p>Eu sou Sabrina Vique — a pessoa que carrega histórias no coração desde que aprendeu o significado das palavras.
 Sou formada em História pela Universidade Estadual do Maranhão e atualmente resido em Araguaína, TO.
 
